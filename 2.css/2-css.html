@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Document</title>
+        <style>
+            /*class Selector*/
+
+            .btn{
+                background-color: orange; color: white; text-align: center; padding: 10px;
+                width: 80px; margin-left: 10px; float: left;
+                font-weight: bold;
+                font-family: 'Courier New', Courier, monospace;
+                cursor: pointer;
+                transition: ease all .2s;
+                border-radius: 20px 0px 20px 0px;
+            }
+            .log{
+                background-color: green; color: black;
+            }
+            .rch{
+                background-color: rgb(255, 0, 183);
+            }
+            .btn:hover{
+                background-color: black;
+                color: white;
+            }
+            .btn:active{
+                transform: translate(5px,5px);
+                transition: ease all .2s;
+            }
+        </style>
+    </head>
+    <body> <!--properties depend on the order written in style.-->
+        <div class="btn">Signup</div>
+        <div class="btn log ">Login</div>
+        <div class="rch log btn">Password</div>
+        <div class="btn">Reach Us</div>
+</html>

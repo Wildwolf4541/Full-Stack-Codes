@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 1000px; height: 50px; margin: auto; background-color: bisque;
+            display: flex;
+        }
+        .childl{
+            background-color: blueviolet;
+            flex-grow: 1;
+        }
+        .childc{
+            background-color: pink;
+            flex-grow: 2;
+        }
+        .childr{
+            background-color: tomato;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="childl">left</div>
+        <div class="childr">right</div>
+    </div>
+
+    <br><br>
+    <div class="container">
+        <div class="childl">left</div>
+        <div class="childc">center</div>
+        <div class="childr">right</div>
+    </div>
+
+    <br><br>
+    <div style="background-color: greenyellow; display: inline;padding: 10px; ">Hello hi Bye bale bale</div>
+</body>
+</html>
