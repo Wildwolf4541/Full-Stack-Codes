@@ -1,0 +1,48 @@
+.btn{
+    background-color: orange; color: white; text-align: center; padding: 10px;
+    width: 80px; margin-left: 10px; float: left;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    transition: ease all .2s;
+    border-radius: 20px 0px 20px 0px;
+}
+body{
+    /* .. means go to parent folder */
+    background-image: url(../pics/1.jpg);
+}
+#outer-body{
+    width: 1000px; height: 600px; background-color: white; margin: auto;
+}
+#left-side{
+    width: 250px; height: inherit; background-color: beige; float: left;
+    overflow: scroll;
+}
+#right-side{
+    width: 750px; height: inherit; background-color: yellowgreen;float: left;
+}
+ol{
+        list-style: none; padding-left: 0px;
+        margin-bottom: 0px;
+}
+/* can also give negative value in margin-left. */
+li{
+    text-align: center;
+    line-height: 40px;
+    background-color: white; margin-bottom: 3px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-bottom: 3px darkgrey solid;
+    cursor: pointer;
+}
+li:hover{
+    background-color: black;
+    color: white;
+}
+li:before{
+    content:"☠";
+}
+/* similarly li:after can be used */
+a{
+    text-decoration: none;
+    color: inherit;
+}
