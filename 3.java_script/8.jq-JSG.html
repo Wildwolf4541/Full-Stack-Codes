@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+  
+    <script>
+
+        $(document).ready(function()
+        {
+            // $("#btn1").click(function(){
+            //         alert("Single Clicked");
+            // });   
+
+            $("#btn1").dblclick(function(){
+                alert("Double Clicked");
+               
+            });
+            
+
+            /*$("#btn1").bind("dblclick",function(){
+                alert("Mouse Entered");
+            })*/
+
+            $("#btnFull").click(function(){
+                let fn= $("#txtFn").val();//getter
+                let ln= $("#txtLn").val();
+
+                let full=fn+" "+ln;
+                $("#txtFull").val(full);//setter
+                
+                $("#spn").html(full);//setter
+                //.innerHTML=full;
+                $("#btnClr").prop("disabled",false);
+
+            })
+
+            $("#btnClr").click(function(){
+                $("#txtFn").val("");
+                $("#txtLn").val("");
+                $("#txtFull").val("");
+            })
+
+
+        } );
+        
+    </script>
+
+</head>
+<body>
+        <center>
+            <input type="button" value="Click Here" id="btn1">
+            <hr>
+            <p>
+                F.Name <input type="text" id="txtFn">
+
+            </p>
+            <p>
+                L.Name <input type="text" id="txtLn">
+            </p>
+            
+            <input type="button" id="btnFull" value="Full Name">
+            <input type="button" id="btnClr" value="Saaaff" disabled>
+
+            <p>
+                Full.Name <input type="text" id="txtFull">
+            </p>
+            <p>
+                <span id="spn">
+                        *
+                </span>
+            </p>
+
+        </center>
+    
+</body>
+</html>

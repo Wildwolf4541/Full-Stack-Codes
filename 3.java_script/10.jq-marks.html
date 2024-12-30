@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            let jC=false,jJ=false;
+            $("#btnSum").click(function(){
+
+                if(jC==false || jJ==false)
+                    {
+                        alert("Fill valid Data");
+                        return;
+                    }
+                    let cpp=$("#txtCpp").val();
+                    let java=$("#txtJava").val();
+                    
+                    let sum=parseFloat(cpp)+parseFloat(java);
+
+                    $("#txtTotal").val(sum);
+                    $("#btnPer").attr("disabled",false);
+                    
+            });
+            //------------------------
+            $("#txtCpp").blur(function(){
+                    let cpp=$("#txtCpp").val();
+                    if(cpp=="")
+                       {
+                         $("#errCpp").html("Fill Value Plz");   
+                        $(this).css("background-color","red").css("border","2px orange solid");
+                        jC=false;
+                       }
+                        else{
+                            $("#errCpp").html("Gooog Oea");
+                            $(this).css("background-color","green");
+                            jC=true;
+                        }
+            });
+
+            $("#txtJava").blur(function(){
+                    let java=$("#txtJava").val();
+                    if(java=="")
+                       {
+                            jJ=false;
+                        $(this).css("background-color","red").css("border","2px orange solid");
+                       }
+                        else
+                        {
+                            jJ=true;
+                            $(this).css("background-color","green");
+                        }
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <center>
+    <p>
+        C++ <input type="text" id="txtCpp" >
+        <br>
+        <span id="errCpp">*</span>
+    </p>
+    <p>
+        Java <input type="text" id="txtJava" >
+        <br>
+        <span id="errJava">*</span>
+    </p>
+    <p>
+        <input type="button" value="Total"  id="btnSum">
+        <input type="button" value="Percentage"  id="btnPer" disabled>
+    </p>
+    <p>
+        <input type="text" id="txtTotal">
+    </p>
+</center>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Document</title>
+    <script>
+        function fun()
+        {
+            //console.log("Welcome");
+            //document.write("WELCOME AGAIN!!!!!");
+            //alert("Welcome Last Time");
+        }
+
+        var pi=3.14; // global variable.
+
+        function fun2(){
+            var x; //its type is undefined-no type.
+            x=10;//its integer now.
+            alert(x);
+            alert(pi);
+            x="BCE"//string now.
+            x=true;//Boolean.
+        }
+        function fun3(){
+            var otp= prompt("Enter OTP"); //it always returns string.
+            alert(otp);
+            // == doesn't consider data types when comparing.
+            // === Considers data types.
+        }
+        function DoConfirm(){
+            var resp= confirm("R u Sure ?");
+            alert(resp);
+
+            if(resp==true) alert("OKAY");
+            else alert("It's OKAY");
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <input type="button" value="Click" onclick="fun();">
+        <input type="button" value="Variable" onclick="fun2();">
+        <input type="button" value="Diff" onclick="fun3();">
+        <input type="button" value="R u sure?" onclick="DoConfirm();">
+    </center>
+</body>
+</html>

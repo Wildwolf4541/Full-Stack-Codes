@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(
+            function(){
+                    $("#btnTotal").click(function(){
+                        let sm=0;
+                        if($("#chkJava").prop("checked")==true)
+                            sm=sm+ parseFloat($("#chkJava").val());
+
+                        if($("#chkDsa").prop("checked")==true)
+                            sm=sm+ parseFloat($("#chkDsa").val());
+
+                        alert(sm);
+
+                    })
+                //------------------------
+                $("#chkAll").click(function(){
+                    let resp=$("#chkAll").prop("checked");
+
+                        $("#chkJava").prop("checked",resp);
+                        $("#chkDsa").prop("checked",$("#chkAll").prop("checked"));
+                });
+            
+                //-----------------------------------
+
+                $("#chkDsa").click(function(){
+                    if($(this).prop("checked")==true && $("#chkJava").prop("checked")==true)
+                        $("#chkAll").prop("checked",true);
+                    else
+                        $("#chkAll").prop("checked",false);
+
+
+                });
+
+
+            }
+        );
+    </script>
+</head>
+<body>
+    <center>
+        <hr>
+        <p>
+            Training U Want to Join and get total fee: <br>
+
+            <input type="checkbox" id="chkAll"  >Select All 
+            <br>
+            <input type="checkbox" value="8500" id="chkJava" >Java 
+            <input type="checkbox" value="8800" id="chkDsa">DSA
+            <br>
+            <input type="button" value="Total Fee" id="btnTotal">
+            <br>
+            Total Fee: <span id="tfee">*</span>
+
+        </p>
+        <hr>
+        <h2>Radio Buttons</h2>
+        <p>
+            Discount
+            <br>
+            <input type="radio" id="rad10" value="10" name="discount" >10%
+            <input type="radio" id="rad20" value="20" name="discount" >20%
+            <br>
+            <span id="dis">*</span>
+        </p>
+
+    </center>
+</body>
+</html>

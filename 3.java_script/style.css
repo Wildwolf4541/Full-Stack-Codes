@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Maiden+Orange&display=swap');
+
+.maiden-orange-regular {
+    font-family: "Maiden Orange", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto-slab-roboto_font {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.outer_box {
+
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 160px;
+    width: 160px;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#msg {
+    color: black;
+    font-size: 5vmin;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.hide {
+   display: none;
+}
+
+#new-btn {
+
+    background-color: #E3D7FF;
+    border-radius: 5px;
+    padding: 2px;
+    border: none;
+}
+
+#new-btn:active {
+    transform: scale(0.9);
+}
+
+.msg-container {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box {
+    background-color: #a2b8ff;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: Maiden Orange, serif;
+    font-size: 35px;
+    color: black;
+    filter: drop-shadow(0 0 0.5px black);
+    border: 0px;
+}
+
+.bound {
+
+    justify-content: center;
+    align-items: normal;
+    display: flex;
+}
+
+body {
+    background-color: #21accf;
+}
+
+h1 {
+    font-family: Roboto Slab, serif;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.end {
+    width: 75px;
+    align-self: center;
+    padding: 3px;
+    background-color: #E3D7FF;
+    border: 0px;
+    border-radius: 4px;
+
+
+
+}
+
+.end:active {
+    transform: scale(0.9);
+}

@@ -1,0 +1,197 @@
+
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function doFillListBoxes(products)
+            {
+                let items=document.getElementById("items");
+                let prices=document.getElementById("prices");
+
+                let index=products.selectedIndex;
+                let selItem=products.value;
+                if(index==1)//laptop
+                    {
+
+                            items.length=0;
+                            prices.length=0;
+                            /*
+                            let opt1=document.createElement("option");
+                            opt1.text="Dell"; opt1.value="Dell";
+                            items.append(opt1);
+
+                            let opt2=document.createElement("option");
+                            opt2.text="Lenovo"; opt2.value="Lenovo";
+                            items.append(opt2);
+
+                            prices.length=0;
+                            let opt3=document.createElement("option");
+                            opt3.text="50000"; opt3.value="50000";
+                            prices.append(opt3);
+
+                            let opt4=document.createElement("option");
+                            opt4.text="60000"; opt4.value="60000";
+                            prices.append(opt4);
+                            */
+                           for(i=0;i<lap.length;i++)
+                            {
+                                let x=document.createElement("option");
+                                x.text=lap[i]; x.value=lap[i];
+                                items.append(x);
+
+                                let y=document.createElement("option");
+                                y.text=prc[i]; y.value=prc[i];
+                                prices.append(y);
+
+                            }
+
+
+
+                    }
+                    else
+                    if(selItem=="Mobile")//laptop
+                    {
+                        items.length=0;
+                        prices.length=0;
+                       /* let opt1=document.createElement("option");
+                            opt1.text="Samsung"; opt1.value="Samsung";
+                            items.append(opt1);
+
+                            let opt2=document.createElement("option");
+                            opt2.text="RedMi"; opt2.value="RedMi";
+                            items.append(opt2);
+
+                            prices.length=0;
+                            let opt3=document.createElement("option");
+                            opt3.text="10000"; opt3.value="10000";
+                            prices.append(opt3);
+
+                            let opt4=document.createElement("option");
+                            opt4.text="20000"; opt4.value="20000";
+                            prices.append(opt4);
+                            */
+                            var mob=["Apple","RedMI","Sam"];
+                           var prc=["776","940","590"];
+
+                           for(i=0;i<mob.length;i++)
+                            {
+                                let x=document.createElement("option");
+                                x.text=mob[i]; x.value=mob[i];
+                                items.append(x);
+
+                                let y=document.createElement("option");
+                                y.text=prc[i]; y.value=prc[i];
+                                prices.append(y);
+
+                            }
+                    }
+            }
+            function doAddToCart(items,prices,sitems,sprices)
+            {
+                let si=items.value;
+                let indx=items.selectedIndex;
+                
+                prices[indx].selected=true;
+                let sp=prices.value;
+
+                                let x=document.createElement("option");
+                                x.text=si; x.value=si;
+                                sitems.append(x);
+
+                                let y=document.createElement("option");
+                                y.text=sp; y.value=sp;
+                                sprices.append(y);
+
+                // alert(si+  "  "+ sp);
+            }
+            function doAdd(items,prices)
+            {
+                    let item=prompt("ENtre Item");
+                    let price=prompt("Entre Price:");
+
+                    let opt=document.createElement("option");
+                    opt.text=item; opt.value=item;
+                    items.append(opt);
+
+                    let opt3=document.createElement("option");
+                    opt3.text=price; opt3.value=price;
+                    prices.append(opt3);
+            }
+
+        function doBill(sprices,bl)
+            {
+                let sum=0;
+                for(i=0;i<sprices.length;i++)
+                {
+                    sum+= parseFloat(sprices[i].value); 
+                }
+                bl.innerHTML="Bill="+sum;
+            }
+            function doDelNow(sitems,sprices,bl)
+            {
+                let indx=sitems.selectedIndex;
+                
+                    sitems.remove(indx);
+                    sprices.remove(indx);
+
+                    doBill(sprices,bl);
+
+            }
+    </script>
+</head>
+<body>
+    <center>
+        Items : 
+            <select id="products" onchange="doFillListBoxes(this);">
+                <option value="none">Select</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Mobile">Mobile</option>
+        </select>
+        <hr>
+        <table>
+            <tr>
+                <th>
+                    Items <br>
+                    <select id="items" ondblclick="doAddToCart(items,prices,sitems,sprices);" size="4" style="width:100px">
+                            
+                    </select>
+                </th>
+                <th>
+                    Prices <br>
+                    <select id="prices" size="4" style="width:100px">
+                            
+                    </select>
+                </th>
+            </tr>
+            
+        </table>
+        <br>
+        <h3>
+            Cart
+        </h3>
+        <table>
+            <tr>
+                <th>
+                   Selected Items <br>
+                    <select id="sitems"  size="4" style="width:100px" ondblclick="doDelNow(sitems,sprices,bl);">
+                            
+                    </select>
+                </th>
+                <th>
+                    Selected Prices <br>
+                    <select id="sprices" size="4" style="width:100px">
+                            
+                    </select>
+                </th>
+            </tr>
+            
+        </table>
+            <input type="button" value="bill" onclick="doBill(sprices,bl);">
+            <p id="bl">
+
+            </p>
+            <br><br>
+        Item : <input type="button" value="AddItem" onclick="doAdd(items,prices);">
+    </center>
+</body>
+</html>

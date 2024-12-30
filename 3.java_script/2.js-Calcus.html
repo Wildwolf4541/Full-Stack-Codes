@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <title>Document</title>
+      <script>
+        function doSum()
+        {
+                    var strVa=document.frm.txtA.value;
+                    var strVb=document.frm.txtB.value;
+                    //convert string to integer and float
+                    var sum=parseInt(strVa)+ parseFloat(strVb);
+                    // alert(sum);
+                    document.frm.txtSum.value=sum;
+
+        }
+        function doMulti()
+        {
+                    var strVa=document.frm.txtA.value;
+                    var strVb=document.frm.txtB.value;
+                    
+                    var ml=strVa*strVb; //auto conversion to float
+                    document.frm.txtMulti.value=ml;
+
+        }
+        function doSaaf()
+        {
+            document.frm.txtA.value="";
+            document.frm.txtB.value="";
+            document.frm.txtSum.value="";
+            document.frm.txtMulti.value="";
+        }
+      </script>
+</head>
+<body>
+   
+        <form name="frm">
+            <p>
+                Enter A: <input type="text" name="txtA" value="4"  >
+            </p>
+            <p>Enter B: <input type="text" name="txtB" value="2.5">
+
+            </p>
+            <p>
+                <input type="button" value="Sum" onclick="doSum();">
+                <input type="button" value="Multiply" onclick="doMulti();">
+                <input type="button" value="Clear" onclick="doSaaf();">
+                <input type="reset">   
+            </p>
+            <hr>
+            <p>
+               Sum <input type="text" name="txtSum">
+            </p>
+            <p>
+                Multiply <input type="text" name="txtMulti">
+            </p>
+        </form>
+   
+</body>
+</html>

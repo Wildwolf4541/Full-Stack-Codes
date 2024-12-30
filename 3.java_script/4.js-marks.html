@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../_script/marks.js"></script>
+</head>
+<body>
+    <center>
+        <form>
+                <p>
+                    C++ <input type="text" id="txtCpp" onblur="chkBox(txtCpp,errCpp)">
+                    <br>
+                    <span id="errCpp">*</span>
+                </p>
+                <p>
+                    Java <input type="text" id="txtJava" onblur="chkBox(txtJava,errJava)">
+                    <br>
+                    <span id="errJava">*</span>
+                </p>
+                <p>
+                    DSA <input type="text" id="txtDsa" onblur="chkBox(txtDsa,errDsa)">
+                    <br>
+                    <span id="errDsa">*</span>
+                </p>
+
+                <p>
+                    <input type="button" value="Total" onclick="doTotal(txtCpp,txtJava,txtDsa,errCpp,errJava,errDsa,txtTotal);">
+                    <input type="button" id="btnPer" value="Percentage" onclick="doPer(txtTotal,txtPer,btnRes);" disabled>
+                    <input type="button" id="btnRes" value="Result" onclick="doResult();" disabled>
+                </p>
+                <p>
+                    Total Marks <input type="text" id="txtTotal">
+                </p>
+                <p>
+                    Percentage <input type="text" id="txtPer">
+                </p>
+                <p>
+                    Result <input type="text" id="txtRes">
+                </p>
+        </form>
+        <hr>
+        Write Expression: <input type="text" id="txtExp">
+        <input type="button" value="Evaluate" onclick="doEval(txtExp);">
+
+        <script>
+            function doEval(txtExp)
+            {
+                let res=eval(txtExp.value);
+                alert(res);
+            }
+        </script>
+    </center>
+</body>
+</html>

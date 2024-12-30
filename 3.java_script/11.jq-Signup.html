@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../_style/modal.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+
+    <script>
+        $(document).ready(function()
+        {
+
+            /*$("#eye").click(function(){
+
+                if($("#txtPwd").prop("type")=="password")
+                {
+                   $("#txtPwd").prop("type","text"); 
+                   $("#eye").removeClass("fa-eye").addClass("fa-eye-slash");
+                }
+                else
+                {
+                    $("#txtPwd").prop("type","password"); 
+                   $("#eye").addClass("fa-eye").removeClass("fa-eye-slash");
+                   
+                }
+            });
+            */
+            $("#eye").mousedown(function(){
+                $("#txtPwd").prop("type","text"); 
+                $("#eye").removeClass("fa-eye").addClass("fa-eye-slash");
+            });
+            $("#eye").mouseup(function(){
+                $("#txtPwd").prop("type","password"); 
+                $("#eye").addClass("fa-eye").removeClass("fa-eye-slash");
+            });
+
+           /* $("#txtPwd").keydown(function(){
+                let pwd=$(this).val();
+                if(pwd.length<6)
+                    $("#errPwd").html("Average");
+                else
+                if(pwd.length>=8)
+                    $("#errPwd").html("Strong Password");
+                
+            });*/
+
+            $("#txtEmail").blur(function(){
+              
+                var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
+                let email=$(this).val();
+
+                if(pattern.test(email)==true)
+                    alert("Valid");
+                else
+                    alert("Invalid");
+            });
+
+
+            $("#txtPwd").keydown(function(){
+              
+                var regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$/;
+              let pwd=$(this).val();
+
+              if(regularExpression.test(pwd)==true)
+                 $("#errPwd").html("Valid");
+              else
+                $("#errPwd").html("iNVALID");
+          });
+          //=============================
+          $("#btn").bind("click",function(){
+
+
+             $("#box").show(1000);
+           // $("#box").slideDown(1000);
+        //    $("#box").fadeIn(1000);
+
+            // $(this).css("display","none");
+
+          });
+          //======================
+          $("#cross").click(function(){
+            $("#box").fadeOut();;
+            
+          })
+           
+        });
+    </script>
+    <style>
+        #box{
+            display: block;;
+        }
+    </style>
+    
+</head>
+<body>
+
+   
+    <center>
+        <input type="button" id="btn" value="Signup Here" class="animate__animated animate__rubberBand">
+    </center>
+    <div id="box" class="animate__backInDown">
+            <div id="cross" class="animate__animated animate__shakeY"></div>
+            <center>
+                <img style="margin-top: 50px;" src="../_pics/userlogin.png" alt="" width="100" height="100">
+            </center>
+            <div id="frm">
+                <form action="">
+                   <div class="row">
+                    <label for="txt">Enter Email ID</label>
+                    <br>
+                        <input type="text" id="txtEmail"  placeholder="enter email"><i class="fa-solid fa-users fa-beat"></i>
+                    
+                   </div> 
+                   <div class="row">
+                    <label for="">Enter Password</label> <span id="errPwd">*</span>
+                    <br>
+                        <input type="password" id="txtPwd"> 
+                        <i style="font-size: 20px;" id="eye" class="fa-solid fa-eye fa-bounce"></i>
+                    
+                   </div> 
+                   <div class="row">
+                    <label for="">Enter Mobile</label>
+                    <br>
+                        <input type="text"><i class="fa-solid fa-mobile-screen fa-flip"></i>
+                    
+                   </div> 
+                  
+                   <center>
+                    <input type="button" class="btn" value="Signup Here">
+                   </center>
+
+                </form> 
+            </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let sum;
+        function doTotal(chkJava,chkDsa,tfee)
+        {
+             sum=0;
+            let trn="";
+            if(chkJava.checked==true)
+                {
+                    sum=sum+  parseInt(chkJava.value);
+                    trn+="Java,";
+                }
+
+            if(chkDsa.checked==true)
+            {
+                sum=sum+  parseInt(chkDsa.value);
+                trn+="DSA";
+            }
+
+          tfee.innerHTML=sum+"  For "+trn;      
+
+        }
+        function doAll(chkAll,chkJava,chkDsa)
+        {   
+            /*if(chkAll.checked==true)
+                {
+                    chkJava.checked=true;
+                    chkDsa.checked=true;
+                
+                }
+                else
+                {
+                    chkJava.checked=false;
+                    chkDsa.checked=false;
+                }
+            */
+            chkJava.checked=chkAll.checked;//false
+            chkDsa.checked=chkAll.checked;
+
+                doTotal(chkJava,chkDsa,document.getElementById("tfee"));
+
+        }
+        function doDiscount(rate)
+        {
+                let discount=sum*rate/100;
+                document.getElementById("dis").innerHTML="Discount="+discount;
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <hr>
+        <p>
+            Training U Want to Join and get total fee: <br>
+
+            <input type="checkbox" id="chkAll" onclick="doAll(this,chkJava,chkDsa);" >Select All 
+            <br>
+            <input type="checkbox" value="8500" id="chkJava" >Java 
+            <input type="checkbox" value="8800" id="chkDsa">DSA
+            <br>
+            <input type="button" value="Total Fee" onclick="doTotal(chkJava,chkDsa,tfee);">
+            <br>
+            Total Fee: <span id="tfee">*</span>
+
+        </p>
+        <hr>
+        <h2>Radio Buttons</h2>
+        <p>
+            Discount
+            <br>
+            <input type="radio" id="rad10" value="10" name="discount" onclick="doDiscount(this.value)">10%
+            <input type="radio" id="rad20" value="20" name="discount" onclick="doDiscount(this.value)">20%
+            <br>
+            <span id="dis">*</span>
+        </p>
+
+    </center>
+</body>
+</html>
